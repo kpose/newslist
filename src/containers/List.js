@@ -29,7 +29,15 @@ class List extends Component {
     if (loading) {
       return <div>Loading....</div>
     }
-    return data.map(news => <Card key ={ news.id } news ={news} />);
+    return(
+      <div class='row'>
+        {data.map(news => 
+      <div class = 'col-sm-2'>
+         <Card key ={ news.id } news ={news} />
+      </div>
+      )}
+      </div>
+    )
   }
 }
 
