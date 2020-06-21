@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Card = ({ news }) => {
     return (
@@ -17,6 +18,15 @@ const Card = ({ news }) => {
 };
 
 
-
+Card.propTypes = {
+  news: PropTypes.shape({
+    source: PropTypes.string,
+    urlToImage: PropTypes.string,
+    description: PropTypes.string,
+    img: PropTypes.shape({
+      src: PropTypes.string,
+    }),
+  }).isRequired,
+};
 
 export default Card;
